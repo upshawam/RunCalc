@@ -41,8 +41,15 @@ h1, h2 {
   margin: 10px 0;
 }
 
-/* Input and Select Box Uniformity */
-.input-row input,
+/* Group Styling for Input + Label */
+.input-group {
+  display: flex;
+  flex-direction: column; /* Stacks label under input */
+  align-items: center; /* Centers label and input */
+}
+
+/* Input and Select Box Styling */
+.input-group input,
 .input-row select {
   width: 100px; /* Static width for all boxes */
   height: 40px; /* Static height for touch-friendly design */
@@ -54,10 +61,17 @@ h1, h2 {
   font-size: 1rem;
 }
 
-.input-row input:focus,
+.input-group input:focus,
 .input-row select:focus {
   outline: none;
   border-color: #ff9800;
+}
+
+/* Small Label Styling */
+.small-label {
+  font-size: 0.8rem; /* Smaller font size for label */
+  color: #b0b0b0; /* Light gray to complement dark theme */
+  margin-top: 4px; /* Adds space above the label */
 }
 
 /* Button Styling */
@@ -112,10 +126,14 @@ p {
     padding: 15px;
   }
 
-  .input-row input,
+  .input-group input,
   .input-row select,
   button {
     font-size: 0.95rem;
     padding: 10px;
+  }
+
+  .small-label {
+    font-size: 0.7rem;
   }
 }
