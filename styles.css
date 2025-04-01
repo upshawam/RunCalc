@@ -1,3 +1,10 @@
+/* Universal Box-Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Dark Theme Styling */
 body {
   font-family: Arial, sans-serif;
@@ -30,60 +37,62 @@ h1, h2 {
 /* Input Row Layout */
 .input-row {
   display: flex;
-  justify-content: space-between;
   gap: 8px;
   margin: 10px 0;
 }
 
-/* White Input Boxes */
-input, select {
+/* Uniform Input and Select Styling */
+input, 
+select {
   flex: 1;
-  padding: 8px;
+  padding: 12px;               /* Increased padding for better touch targets */
   border: 1px solid #333;
   border-radius: 5px;
-  background: #ffffff;           /* White input boxes */
-  color: #000000;                /* Black text inside */
-  font-size: 0.9rem;
-  transition: 0.3s;
+  background: #ffffff;
+  color: #000000;
+  font-size: 1rem;             /* Slightly larger for legibility */
+  transition: border-color 0.3s;
+  min-height: 44px;            /* Recommended minimum height for mobile tap targets */
 }
 
-input:focus, select:focus {
+input:focus, 
+select:focus {
   outline: none;
-  border-color: #ff9800;         /* Orange border on focus */
+  border-color: #ff9800;
 }
 
-/* Smaller Buttons */
+/* Button Styling */
 button {
   width: auto;
-  padding: 8px 16px;             /* Smaller padding */
+  padding: 10px 16px;          /* Adjusted padding for clarity */
   margin: 5px;
   border: none;
   border-radius: 5px;
-  background: #ff9800;           /* Orange buttons */
-  color: #1e1e1e;                /* Dark text */
-  font-size: 0.9rem;             /* Slightly smaller font */
+  background: #ff9800;
+  color: #1e1e1e;
+  font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 button:hover {
-  background: #ffa726;           /* Lighter orange on hover */
+  background: #ffa726;
 }
 
-/* Smaller Clear All Button */
+/* Clear Button */
 .clear-btn {
-  background: #f44336;           /* Red color */
+  background: #f44336;
   color: white;
 }
 
 .clear-btn:hover {
-  background: #e53935;           /* Slightly darker red on hover */
+  background: #e53935;
 }
 
 /* Compact Section Layout */
 .section {
-  margin-bottom: 10px;           /* Reduced spacing */
-  padding: 8px 12px;             /* Smaller padding */
+  margin-bottom: 10px;
+  padding: 8px 12px;
   border-bottom: 1px solid #333;
 }
 
@@ -91,30 +100,23 @@ button:hover {
   border-bottom: none;
 }
 
-/* Select Box */
-select {
-  flex: 1;
-  padding: 8px;
-  background: #ffffff;           /* White background */
-  color: #000000;                /* Black text */
-}
-
-/* Results */
+/* Results Paragraph */
 p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #b0b0b0;
   margin: 5px 0;
 }
 
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 600px) {
   .container {
-    width: 95%;
     padding: 15px;
   }
 
-  input, select, button {
-    font-size: 0.85rem;
-    padding: 6px 10px;           /* Smaller inputs and buttons */
+  input, 
+  select, 
+  button {
+    font-size: 0.95rem;
+    padding: 10px;
   }
 }
