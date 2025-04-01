@@ -33,7 +33,7 @@ body {
   gap: 10px;
 }
 
-/* Ensuring Equal Input Box Sizes */
+/* Ensure Equal Input Box Sizes */
 .input-group {
   flex: 1;
 }
@@ -51,7 +51,7 @@ body {
   gap: 10px;
 }
 
-#distance, #event {
+#distance, #eventSelect {
   flex: 1; /* Both fields take equal width */
   font-size: 1rem;
   padding: 5px;
@@ -60,38 +60,35 @@ body {
 
 /* Button Styling */
 button {
-  padding: 8px;
+  padding: 8px 15px;
   font-size: 0.9rem;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
+  width: auto; /* Only as wide as text */
 }
 
 /* Calculate Buttons - Golden Yellow */
-#calculate, .calculate {
-  background-color: #FFC107; /* Golden Yellow */
-  color: black;
-  width: auto; /* Adjust to fit text */
-  padding: 8px 15px;
+button:not(.clear-btn) {
+  background-color: #FFC107 !important; /* Golden Yellow */
+  color: black !important;
 }
 
 /* Clear Button - Red */
-#clear {
-  background-color: #dc3545;
-  color: white;
-  width: 100%;
+.clear-btn {
+  background-color: #dc3545 !important; /* Red */
+  color: white !important;
 }
 
-/* Adjust Button Layout */
-.button-row {
+/* Button Container Layout */
+.button-container {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 10px;
 }
 
 /* Separate Clear Button Below Calculate */
-.clear-button-row {
-  margin-top: 20px; /* Extra spacing */
+.clear-btn {
+  margin-top: 10px; /* Extra spacing below calculate */
+  width: 100%;
 }
