@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-/* Dark Theme Styling */
+/* Dark Theme */
 body {
   font-family: Arial, sans-serif;
   background: #121212;
@@ -26,41 +26,22 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
-/* Ensure "Time" is at the top */
-.section:first-child {
-  margin-top: 0;
-}
-
-/* Input Row Layout */
+/* Input Row - Centered & Proper Spacing */
 .input-row {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: center; /* Centers boxes */
+  gap: 12px; /* Keeps spacing even */
+  margin: 5px 0;
 }
 
-/* Ensure Equal Input Box Sizes */
-.input-group {
-  flex: 1;
-}
-
-.input-group input {
-  width: 100%;
+/* Input Box Consistency */
+.input-group input,
+#distance,
+#eventSelect {
+  width: 80px; /* Uniform size */
   font-size: 1rem;
   padding: 5px;
-}
-
-/* Make Distance and Pick Event the Same Size */
-.distance-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-#distance, #eventSelect {
-  flex: 1; /* Both fields take equal width */
-  font-size: 1rem;
-  padding: 5px;
-  min-width: 0; /* Prevents stretching */
+  text-align: center;
 }
 
 /* Button Styling */
@@ -72,32 +53,30 @@ button {
   border-radius: 5px;
   text-align: center;
   width: auto; /* Only as wide as text */
+  display: block;
+  margin: 5px auto; /* Keeps buttons centered */
 }
 
 /* Calculate Buttons - Golden Yellow */
 button:not(.clear-btn) {
-  background-color: #FFC107 !important; /* Golden Yellow */
+  background-color: #FFC107 !important;
   color: black !important;
-  display: block;
-  margin: 8px auto; /* Centers the button and reduces spacing */
 }
 
 /* Clear Button - Red */
 .clear-btn {
-  background-color: #dc3545 !important; /* Red */
+  background-color: #dc3545 !important;
   color: white !important;
-  display: block;
-  margin: 10px auto; /* Centers the button below */
 }
 
-/* Button Container Layout */
+/* Button Container - Small Gap Above Buttons */
 .button-container {
   text-align: center;
-  padding-top: 5px; /* Reduces space above buttons */
+  padding-top: 5px; /* Tiny gap above buttons */
 }
 
-/* Place Clear Button Outside the Container */
+/* Clear Button - Below and Centered */
 .clear-btn-container {
   text-align: center;
-  margin-top: 10px; /* Slightly reduced spacing */
+  margin-top: 12px; /* Subtle space below */
 }
