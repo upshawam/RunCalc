@@ -51,22 +51,24 @@ body {
 
 /* Button Styling */
 button {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
+  width: 80%; /* Reduced button width */
+  padding: 8px; /* Reduced padding */
+  font-size: 0.9rem; /* Smaller text */
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  text-align: center;
 }
 
-/* Restore Button Colors */
-#calculate {
-  background-color: #28a745; /* Green */
-  color: white;
+/* Calculate Buttons - Golden Yellow */
+#calculate, .calculate {
+  background-color: #FFC107; /* Golden Yellow */
+  color: #121212;
 }
 
+/* Clear Button - Red */
 #clear {
-  background-color: #dc3545; /* Red */
+  background-color: #dc3545;
   color: white;
 }
 
@@ -74,6 +76,6 @@ button {
 .button-row {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px; /* Added spacing between buttons */
   margin-top: 10px;
 }
