@@ -1,15 +1,13 @@
-/* Universal Box-Sizing */
-*,
-*::before,
-*::after {
+/* Universal box-sizing: includes padding & border in element dimensions */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 /* Dark Theme Styling */
 body {
   font-family: Arial, sans-serif;
-  background: #121212;          /* Dark background */
-  color: #f0f0f0;                /* Light text */
+  background: #121212;
+  color: #f0f0f0;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -22,10 +20,11 @@ body {
 .container {
   width: 95%;
   max-width: 500px;
-  background: #1e1e1e;          /* Slightly lighter dark background */
+  background: #1e1e1e;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  margin: 0 auto;
 }
 
 /* Headings */
@@ -37,26 +36,26 @@ h1, h2 {
 /* Input Row Layout */
 .input-row {
   display: flex;
+  justify-content: center;
   gap: 8px;
   margin: 10px 0;
 }
 
-/* Uniform Input and Select Styling */
-input, 
-select {
-  flex: 1;
-  padding: 12px;               /* Increased padding for better touch targets */
+/* Input and Select Box Uniformity */
+.input-row input,
+.input-row select {
+  flex: 1 1 0;             /* All boxes share equal space */
+  padding: 12px;           /* Enhanced padding for touch targets */
   border: 1px solid #333;
   border-radius: 5px;
   background: #ffffff;
   color: #000000;
-  font-size: 1rem;             /* Slightly larger for legibility */
-  transition: border-color 0.3s;
-  min-height: 44px;            /* Recommended minimum height for mobile tap targets */
+  font-size: 1rem;
+  min-height: 44px;        /* Recommended minimum for mobile tap areas */
 }
 
-input:focus, 
-select:focus {
+.input-row input:focus,
+.input-row select:focus {
   outline: none;
   border-color: #ff9800;
 }
@@ -64,7 +63,7 @@ select:focus {
 /* Button Styling */
 button {
   width: auto;
-  padding: 10px 16px;          /* Adjusted padding for clarity */
+  padding: 10px 16px;
   margin: 5px;
   border: none;
   border-radius: 5px;
@@ -89,7 +88,7 @@ button:hover {
   background: #e53935;
 }
 
-/* Compact Section Layout */
+/* Sections */
 .section {
   margin-bottom: 10px;
   padding: 8px 12px;
@@ -100,7 +99,7 @@ button:hover {
   border-bottom: none;
 }
 
-/* Results Paragraph */
+/* Results Text */
 p {
   font-size: 1rem;
   color: #b0b0b0;
@@ -113,8 +112,8 @@ p {
     padding: 15px;
   }
 
-  input, 
-  select, 
+  .input-row input,
+  .input-row select,
   button {
     font-size: 0.95rem;
     padding: 10px;
