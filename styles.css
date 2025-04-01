@@ -6,8 +6,8 @@
 /* Dark Theme Styling */
 body {
   font-family: Arial, sans-serif;
-  background: #121212; /* Dark background */
-  color: #f0f0f0;       /* Light text for contrast */
+  background: #121212;
+  color: #f0f0f0;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -16,136 +16,59 @@ body {
   align-items: center;
 }
 
-/* Main Container */
+/* Main Container - Adjusting Width */
 .container {
-  width: 95%;
-  max-width: 500px;
-  background: #1e1e1e; /* Slightly lighter dark background */
-  padding: 15px;
+  width: 90%;
+  max-width: 450px;
+  background: #1e1e1e;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
-/* Subheadings */
-h2 {
-  text-align: center;
-  color: #ffffff;
-  font-size: 1.2rem;
-  margin: 8px 0;
-}
-
-/* Input Row Layout */
+/* Input Row Layout - Adding Padding */
 .input-row {
   display: flex;
-  justify-content: center; /* Centers all inputs */
-  gap: 10px;               /* Adds spacing between inputs */
-  margin: 5px 0;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
 }
 
-/* Group Styling for Input + Label */
-.input-group {
-  display: flex;
-  flex-direction: column; /* Stacks label under input */
-  align-items: center;    /* Centers input and label */
-}
-
-/* Input and Dropdown Box Styling */
-.input-group input,
-.input-row select {
-  width: 120px;            /* Uniform width for all input and dropdown boxes */
-  height: 45px;            /* Uniform height */
-  font-size: 1.1rem;       /* Standardized font size for readability */
-  padding: 8px;            /* Padding for usability */
-  border: 1px solid #333;  /* Subtle border */
+/* Input Fields - Adjusting Width */
+input {
+  width: 80%; /* Adjust to prevent full-width stretch */
+  max-width: 180px;
+  padding: 8px;
+  font-size: 16px;
   border-radius: 5px;
-  color: #000000;          /* Black text */
-  background: #ffffff;     /* White background for input boxes */
+  border: 1px solid #ccc;
 }
 
-/* Dropdown Specific Styling */
-.input-row select {
-  background: #dcdcdc;     /* Slightly darker tone for dropdown */
-  border: 1px solid #555;  /* Subtle border contrast */
+/* Fix Distance Field Size */
+#distance {
+  font-size: 16px;
 }
 
-.input-row select:focus,
-.input-row input:focus {
-  outline: none;
-  border-color: #ff9800;   /* Orange border on focus */
-}
-
-/* Small Label Styling */
-.small-label {
-  font-size: 0.8rem;        /* Slightly smaller font size for labels */
-  color: #b0b0b0;           /* Light gray for labels */
-  margin-top: 2px;
-}
-
-/* Button Layout and Styling */
+/* Button Styles - Placing Clear All Separately */
 .button-container {
-  display: flex;            /* Align buttons on the same row */
-  justify-content: center;  /* Center buttons */
-  gap: 10px;                /* Add spacing between buttons */
-  margin-top: 8px;          /* Slight spacing above buttons */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 button {
-  padding: 8px 12px;        /* Compact padding for buttons */
+  width: 100%;
+  max-width: 200px;
+  padding: 10px;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
-  background: #ff9800;      /* Orange button background */
-  color: #1e1e1e;           /* Dark text for contrast */
-  font-size: 0.95rem;
   cursor: pointer;
-  transition: background 0.3s; /* Smooth hover effect */
 }
 
-button:hover {
-  background: #ffa726;
-}
-
-/* Clear Button */
-.clear-btn {
-  background: #f44336;      /* Red button for "Clear All" */
-  color: white;
-}
-
-.clear-btn:hover {
-  background: #e53935;
-}
-
-/* Sections Layout */
-.section {
-  margin-bottom: 6px;       /* Reduced spacing between sections */
-  padding: 6px 10px;        /* Compact padding inside sections */
-  border-bottom: 1px solid #333;
-}
-
-.section:last-child {
-  border-bottom: none;      /* No border on the last section */
-}
-
-/* Results Text */
-p {
-  font-size: 1rem;
-  color: #b0b0b0;
-  margin: 4px 0;            /* Slightly reduced spacing */
-}
-
-/* Responsive Adjustments for Smaller Screens */
-@media (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
-
-  .input-group input,
-  .input-row select,
-  button {
-    font-size: 1rem;        /* Slightly smaller font size on small screens */
-    padding: 8px;
-  }
-
-  .small-label {
-    font-size: 0.7rem;      /* Smaller label font size for mobile */
-  }
+/* Clear All Button - Adjust Position */
+#clearAll {
+  margin-top: 10px;
 }
