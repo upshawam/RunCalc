@@ -10,7 +10,7 @@ body {
   color: #f0f0f0;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +26,20 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
+/* Section Divider */
+.section {
+  text-align: center;
+  border-bottom: 1px solid #444; /* Faint divider line */
+  padding-bottom: 10px; /* Reduced space below the content */
+  margin-bottom: 10px; /* Reduced space between sections */
+}
+
+/* Remove bottom border for the last section */
+.section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
 /* Input Row - Centered & Proper Spacing */
 .input-row {
   display: flex;
@@ -38,7 +52,7 @@ body {
 .input-group input,
 #distance,
 #eventSelect {
-  width: 80px; /* Uniform size */
+  width: 120px; /* Uniform size */
   font-size: 1rem;
   padding: 5px;
   text-align: center;
@@ -69,14 +83,22 @@ button:not(.clear-btn) {
   color: white !important;
 }
 
-/* Button Container - Small Gap Above Buttons */
+/* Button Container - Right Align Buttons */
 .button-container {
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
   padding-top: 5px; /* Tiny gap above buttons */
+  width: 100%; /* Ensure container takes full width */
 }
 
 /* Clear Button - Below and Centered */
 .clear-btn-container {
   text-align: center;
   margin-top: 12px; /* Subtle space below */
+}
+
+/* Centering the labels and adjusting their font size and weight */
+.small-label {
+  font-weight: normal; /* or 400 */
+  font-size: 12px; /* Adjust the size as needed */
 }
