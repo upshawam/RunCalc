@@ -57,19 +57,15 @@ h2 {
   padding: 8px;
   border: 1px solid #333;   /* Subtle border */
   border-radius: 5px;
-  font-size: 1.1rem;        /* Increased font size for better readability */
-}
-
-.input-group input {
+  font-size: 1rem;          /* Standard font size for better readability */
   background: #ffffff;      /* Default white for input boxes */
-  color: #000000;
+  color: #000000;           /* Black text for readability */
 }
 
 /* Dropdown Specific Styling */
 .input-row select {
   background: #e0e0e0;      /* Slightly darker tone for dropdown */
   border: 1px solid #555;   /* Subtle border contrast */
-  color: #000000;
 }
 
 .input-row select:focus {
