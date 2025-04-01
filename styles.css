@@ -6,8 +6,8 @@
 /* Dark Theme Styling */
 body {
   font-family: Arial, sans-serif;
-  background: #121212;
-  color: #f0f0f0;
+  background: #121212; /* Dark background */
+  color: #f0f0f0;       /* Light text for contrast */
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -20,26 +20,25 @@ body {
 .container {
   width: 95%;
   max-width: 500px;
-  background: #1e1e1e;
-  padding: 15px; /* Reduced padding */
+  background: #1e1e1e; /* Slightly lighter dark background */
+  padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
 }
 
 /* Subheadings */
 h2 {
   text-align: center;
   color: #ffffff;
-  font-size: 1.2rem; /* Slightly reduced size */
-  margin: 8px 0; /* Reduced spacing */
+  font-size: 1.2rem;
+  margin: 8px 0;
 }
 
 /* Input Row Layout */
 .input-row {
   display: flex;
-  justify-content: center;
-  gap: 8px; /* Reduced spacing */
+  justify-content: center; /* Centers all inputs */
+  gap: 8px;                /* Adds spacing between inputs */
   margin: 5px 0;
 }
 
@@ -47,52 +46,61 @@ h2 {
 .input-group {
   display: flex;
   flex-direction: column; /* Stacks label under input */
-  align-items: center; /* Centers label and input */
+  align-items: center;    /* Centers input and label */
 }
 
-/* Input and Select Box Styling */
+/* Input and Dropdown Box Styling */
 .input-group input,
 .input-row select {
-  width: 100px;
-  height: 40px;
+  width: 100px;             /* Consistent width for all input and dropdown boxes */
+  height: 40px;             /* Uniform height */
   padding: 8px;
-  border: 1px solid #333;
+  border: 1px solid #333;   /* Subtle border */
   border-radius: 5px;
-  background: #ffffff;
-  color: #000000;
   font-size: 1rem;
 }
 
-.input-group input:focus,
+.input-group input {
+  background: #ffffff;      /* Default white for input boxes */
+  color: #000000;
+}
+
+/* Dropdown Specific Styling */
+.input-row select {
+  background: #e0e0e0;      /* Slightly darker tone for dropdown */
+  border: 1px solid #555;   /* Subtle border contrast */
+  color: #000000;
+}
+
 .input-row select:focus {
   outline: none;
-  border-color: #ff9800;
+  border-color: #ff9800;    /* Orange border on focus */
 }
 
 /* Small Label Styling */
 .small-label {
-  font-size: 0.75rem; /* Slightly smaller font size */
-  color: #b0b0b0;
-  margin-top: 2px; /* Reduced spacing */
+  font-size: 0.75rem;       /* Slightly smaller font size */
+  color: #b0b0b0;           /* Light gray for labels */
+  margin-top: 2px;
 }
 
-/* Centered Button Container */
+/* Button Layout and Styling */
 .button-container {
-  text-align: center;
-  margin-top: 8px; /* Reduced spacing */
+  display: flex;            /* Align buttons on the same row */
+  justify-content: center;  /* Center buttons */
+  gap: 10px;                /* Add spacing between buttons */
+  margin-top: 8px;          /* Slight spacing above buttons */
 }
 
 button {
-  width: auto;
-  padding: 8px 12px; /* Reduced button padding */
-  margin: 4px;
+  padding: 8px 12px;        /* Compact padding for buttons */
   border: none;
   border-radius: 5px;
-  background: #ff9800;
-  color: #1e1e1e;
-  font-size: 0.95rem; /* Slightly smaller button font size */
+  background: #ff9800;      /* Orange button background */
+  color: #1e1e1e;           /* Dark text for contrast */
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s; /* Smooth hover effect */
 }
 
 button:hover {
@@ -101,7 +109,7 @@ button:hover {
 
 /* Clear Button */
 .clear-btn {
-  background: #f44336;
+  background: #f44336;      /* Red button for "Clear All" */
   color: white;
 }
 
@@ -109,25 +117,25 @@ button:hover {
   background: #e53935;
 }
 
-/* Sections */
+/* Sections Layout */
 .section {
-  margin-bottom: 6px; /* Reduced spacing between sections */
-  padding: 6px 10px; /* Reduced padding inside sections */
+  margin-bottom: 6px;       /* Reduced spacing between sections */
+  padding: 6px 10px;        /* Compact padding inside sections */
   border-bottom: 1px solid #333;
 }
 
 .section:last-child {
-  border-bottom: none;
+  border-bottom: none;      /* No border on the last section */
 }
 
 /* Results Text */
 p {
   font-size: 1rem;
   color: #b0b0b0;
-  margin: 4px 0; /* Slightly reduced spacing */
+  margin: 4px 0;            /* Slightly reduced spacing */
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Small Screens */
 @media (max-width: 600px) {
   .container {
     padding: 10px;
@@ -136,11 +144,11 @@ p {
   .input-group input,
   .input-row select,
   button {
-    font-size: 0.9rem;
+    font-size: 0.9rem;      /* Slightly smaller font size on small screens */
     padding: 8px;
   }
 
   .small-label {
-    font-size: 0.7rem;
+    font-size: 0.7rem;      /* Smaller label font size for mobile */
   }
 }
