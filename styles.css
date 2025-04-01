@@ -26,6 +26,11 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
+/* Ensure "Time" is at the top */
+.section:first-child {
+  margin-top: 0;
+}
+
 /* Input Row Layout */
 .input-row {
   display: flex;
@@ -74,7 +79,7 @@ button:not(.clear-btn) {
   background-color: #FFC107 !important; /* Golden Yellow */
   color: black !important;
   display: block;
-  margin: 15px auto; /* Centers the button and adds spacing above */
+  margin: 8px auto; /* Centers the button and reduces spacing */
 }
 
 /* Clear Button - Red */
@@ -82,17 +87,17 @@ button:not(.clear-btn) {
   background-color: #dc3545 !important; /* Red */
   color: white !important;
   display: block;
-  margin: 15px auto; /* Centers the button below */
+  margin: 10px auto; /* Centers the button below */
 }
 
 /* Button Container Layout */
 .button-container {
   text-align: center;
-  padding-top: 10px; /* Adds a little space above buttons */
+  padding-top: 5px; /* Reduces space above buttons */
 }
 
 /* Place Clear Button Outside the Container */
 .clear-btn-container {
   text-align: center;
-  margin-top: 15px; /* Extra spacing below Calculate Pace */
+  margin-top: 10px; /* Slightly reduced spacing */
 }
