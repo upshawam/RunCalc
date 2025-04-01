@@ -18,9 +18,9 @@ body {
 
 /* Main Container */
 .container {
-  width: 90%;             /* Constrained width within faint border */
-  max-width: 400px;       /* Ensures it fits smaller screens neatly */
-  background: #1e1e1e;    /* Slightly lighter dark background */
+  width: 95%;
+  max-width: 500px;
+  background: #1e1e1e; /* Slightly lighter dark background */
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
@@ -37,8 +37,8 @@ h2 {
 /* Input Row Layout */
 .input-row {
   display: flex;
-  justify-content: space-between; /* Ensures even spacing inside container */
-  gap: 8px;
+  justify-content: center; /* Centers all inputs */
+  gap: 10px;               /* Adds spacing between inputs */
   margin: 5px 0;
 }
 
@@ -52,46 +52,45 @@ h2 {
 /* Input and Dropdown Box Styling */
 .input-group input,
 .input-row select {
-  width: 100%;            /* Full width of container alignment */
-  height: 40px;           /* Uniform height */
-  font-size: 1rem;        /* Standardized font size for readability */
-  padding: 8px;           /* Padding for usability */
-  border: 1px solid #333; /* Subtle border */
+  width: 120px;            /* Uniform width for all input and dropdown boxes */
+  height: 45px;            /* Uniform height */
+  font-size: 1.1rem;       /* Standardized font size for readability */
+  padding: 8px;            /* Padding for usability */
+  border: 1px solid #333;  /* Subtle border */
   border-radius: 5px;
-  color: #000000;         /* Black text */
-  background: #ffffff;    /* White background for input boxes */
+  color: #000000;          /* Black text */
+  background: #ffffff;     /* White background for input boxes */
 }
 
 /* Dropdown Specific Styling */
 .input-row select {
-  background: #dcdcdc;    /* Slightly darker tone for dropdown */
-  border: 1px solid #555; /* Subtle border contrast */
+  background: #dcdcdc;     /* Slightly darker tone for dropdown */
+  border: 1px solid #555;  /* Subtle border contrast */
 }
 
 .input-row select:focus,
 .input-row input:focus {
   outline: none;
-  border-color: #ff9800;  /* Orange border on focus */
+  border-color: #ff9800;   /* Orange border on focus */
 }
 
 /* Small Label Styling */
 .small-label {
-  font-size: 0.8rem;       /* Slightly smaller font size for labels */
-  color: #b0b0b0;          /* Light gray for labels */
+  font-size: 0.8rem;        /* Slightly smaller font size for labels */
+  color: #b0b0b0;           /* Light gray for labels */
   margin-top: 2px;
 }
 
 /* Button Layout and Styling */
 .button-container {
   display: flex;            /* Align buttons on the same row */
-  justify-content: space-between; /* Spread buttons evenly */
+  justify-content: center;  /* Center buttons */
   gap: 10px;                /* Add spacing between buttons */
   margin-top: 8px;          /* Slight spacing above buttons */
 }
 
 button {
-  width: 48%;               /* Button size constrained to fit neatly */
-  padding: 8px 12px;
+  padding: 8px 12px;        /* Compact padding for buttons */
   border: none;
   border-radius: 5px;
   background: #ff9800;      /* Orange button background */
@@ -142,7 +141,7 @@ p {
   .input-group input,
   .input-row select,
   button {
-    font-size: 0.95rem;     /* Slightly smaller font size on small screens */
+    font-size: 1rem;        /* Slightly smaller font size on small screens */
     padding: 8px;
   }
 
