@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Locked viewport prevents scaling on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Running Calculator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,7 +13,7 @@
   <h1>Running Calculator</h1>
 
   <!-- Time Section -->
-  <div class="section">
+  <section class="section">
     <h2>Time</h2>
     <div class="input-row">
       <input id="hours" type="number" placeholder="H" min="0">
@@ -21,10 +22,10 @@
     </div>
     <button onclick="calculateTime()">Calculate Time</button>
     <p id="timeResult"></p>
-  </div>
+  </section>
 
   <!-- Distance Section -->
-  <div class="section">
+  <section class="section">
     <h2>Distance (Miles)</h2>
     <div class="input-row">
       <input id="distance" type="number" placeholder="Distance" min="0" step="0.01">
@@ -39,10 +40,10 @@
     </div>
     <button onclick="calculateDistance()">Calculate Distance</button>
     <p id="distanceResult"></p>
-  </div>
+  </section>
 
   <!-- Pace Section -->
-  <div class="section">
+  <section class="section">
     <h2>Pace (Min/Mile)</h2>
     <div class="input-row">
       <input id="paceHours" type="number" placeholder="H" min="0">
@@ -51,11 +52,10 @@
     </div>
     <button onclick="calculatePace()">Calculate Pace</button>
     <p id="paceResult"></p>
-  </div>
+  </section>
 
   <!-- Clear All Button -->
   <button class="clear-btn" onclick="clearAll()">Clear All</button>
-
 </div>
 
 <script src="script.js"></script>
