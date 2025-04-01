@@ -1,101 +1,20 @@
-/* Universal box-sizing */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/* Dark Theme Styling */
-body {
-  font-family: Arial, sans-serif;
-  background: #121212;
-  color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Main Container */
-.container {
-  width: 95%;
-  max-width: 500px;
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-  margin: 0 auto;
-}
-
-/* Headings */
-h1 {
-  text-align: center;
-  font-size: 1.5rem; /* Reduced font size for the top logo */
-  margin-bottom: 15px; /* Reduced spacing below */
-}
-
-h2 {
-  text-align: center;
-  color: #ffffff;
-  margin: 10px 0; /* Reduced spacing above/below each subheading */
-}
-
-/* Input Row Layout */
-.input-row {
-  display: flex;
-  justify-content: center; /* Centers all input boxes */
-  gap: 10px; /* Adds consistent spacing between inputs */
-  margin: 5px 0; /* Reduced spacing between rows */
-}
-
-/* Group Styling for Input + Label */
-.input-group {
-  display: flex;
-  flex-direction: column; /* Stacks label under input */
-  align-items: center; /* Centers label and input */
-}
-
-/* Input and Select Box Styling */
-.input-group input,
-.input-row select {
-  width: 100px; /* Static width for all boxes */
-  height: 40px; /* Static height for touch-friendly design */
-  padding: 8px; /* Padding for usability */
-  border: 1px solid #333;
-  border-radius: 5px;
-  background: #ffffff;
-  color: #000000;
-  font-size: 1rem;
-}
-
-.input-group input:focus,
-.input-row select:focus {
-  outline: none;
-  border-color: #ff9800;
-}
-
-/* Small Label Styling */
-.small-label {
-  font-size: 0.8rem; /* Smaller font size for label */
-  color: #b0b0b0; /* Light gray to complement dark theme */
-  margin-top: 4px; /* Adds space above the label */
-}
-
 /* Centered Button Container */
 .button-container {
-  text-align: center; /* Centers buttons */
-  margin-top: 10px; /* Adds slight spacing from inputs */
+  display: flex; /* Use flex layout to align buttons on the same row */
+  justify-content: center; /* Center the buttons */
+  gap: 10px; /* Add spacing between the buttons */
+  margin-top: 8px; /* Slight spacing above the buttons */
 }
 
 button {
   width: auto;
-  padding: 10px 16px;
-  margin: 5px;
+  padding: 8px 12px; /* Reduced button padding */
+  margin: 4px;
   border: none;
   border-radius: 5px;
   background: #ff9800;
   color: #1e1e1e;
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller button font size */
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -112,40 +31,4 @@ button:hover {
 
 .clear-btn:hover {
   background: #e53935;
-}
-
-/* Sections */
-.section {
-  margin-bottom: 8px; /* Reduced spacing between sections */
-  padding: 8px 12px;
-  border-bottom: 1px solid #333;
-}
-
-.section:last-child {
-  border-bottom: none;
-}
-
-/* Results Text */
-p {
-  font-size: 1rem;
-  color: #b0b0b0;
-  margin: 5px 0;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-  .container {
-    padding: 15px;
-  }
-
-  .input-group input,
-  .input-row select,
-  button {
-    font-size: 0.95rem;
-    padding: 10px;
-  }
-
-  .small-label {
-    font-size: 0.7rem;
-  }
 }
