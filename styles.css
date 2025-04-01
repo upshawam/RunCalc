@@ -57,7 +57,7 @@ h2 {
   padding: 8px;
   border: 1px solid #333;   /* Subtle border */
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.1rem;        /* Increased font size for better readability */
 }
 
 .input-group input {
@@ -144,7 +144,7 @@ p {
   .input-group input,
   .input-row select,
   button {
-    font-size: 0.9rem;      /* Slightly smaller font size on small screens */
+    font-size: 1rem;        /* Slightly smaller font size on small screens */
     padding: 8px;
   }
 
