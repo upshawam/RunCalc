@@ -102,3 +102,17 @@ button:not(.clear-btn) {
   font-weight: normal; /* or 400 */
   font-size: 12px; /* Adjust the size as needed */
 }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .input-group input,
+  #distance,
+  #eventSelect {
+    width: 80px; /* Adjust width for smaller screens */
+    font-size: 0.9rem;
+  }
+
+  .button-container {
+    justify-content: center; /* Center buttons on smaller screens */
+  }
+}
