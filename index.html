@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Locked viewport to prevent unwanted scaling on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Running Calculator</title>
   <link rel="stylesheet" href="styles.css">
@@ -16,8 +15,11 @@
   <section class="section">
     <h2>Time</h2>
     <div class="input-row">
+      <label for="hours">Hours:</label>
       <input id="hours" type="number" placeholder="H" min="0">
+      <label for="minutes">Minutes:</label>
       <input id="minutes" type="number" placeholder="M" min="0" max="59">
+      <label for="seconds">Seconds:</label>
       <input id="seconds" type="number" placeholder="S" min="0" max="59">
     </div>
     <button onclick="calculateTime()">Calculate Time</button>
@@ -28,7 +30,9 @@
   <section class="section">
     <h2>Distance (Miles)</h2>
     <div class="input-row">
+      <label for="distance">Distance:</label>
       <input id="distance" type="number" placeholder="Distance" min="0" step="0.01">
+      <label for="eventSelect">Event:</label>
       <select id="eventSelect">
         <option value="">Pick Event</option>
         <option value="5k">5K</option>
@@ -46,8 +50,11 @@
   <section class="section">
     <h2>Pace (Min/Mile)</h2>
     <div class="input-row">
+      <label for="paceHours">Hours:</label>
       <input id="paceHours" type="number" placeholder="H" min="0">
+      <label for="paceMinutes">Minutes:</label>
       <input id="paceMinutes" type="number" placeholder="M" min="0" max="59">
+      <label for="paceSeconds">Seconds:</label>
       <input id="paceSeconds" type="number" placeholder="S" min="0" max="59">
     </div>
     <button onclick="calculatePace()">Calculate Pace</button>
