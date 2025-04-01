@@ -58,6 +58,14 @@ body {
   text-align: center;
 }
 
+/* Colon Styling */
+.colon {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #f0f0f0;
+}
+
 /* Button Styling */
 button {
   padding: 8px 15px;
