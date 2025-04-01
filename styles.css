@@ -1,4 +1,4 @@
-/* Universal box-sizing: includes padding & border in element dimensions */
+/* Universal box-sizing */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -36,26 +36,23 @@ h1, h2 {
 /* Input Row Layout */
 .input-row {
   display: flex;
-  justify-content: center;
-  gap: 8px;
+  justify-content: center; /* Centers all input boxes */
+  gap: 10px; /* Adds consistent spacing between inputs */
   margin: 10px 0;
 }
 
 /* Input and Select Box Uniformity */
 .input-row input,
 .input-row select {
-  flex: 1;
-  width: 100%; /* Ensures equal box sizes */
-  max-width: 120px; /* Sets an upper limit to avoid huge boxes */
-  padding: 12px;
+  width: 100px; /* Static width for all boxes */
+  height: 40px; /* Static height for touch-friendly design */
+  padding: 8px; /* Padding for usability */
   border: 1px solid #333;
   border-radius: 5px;
   background: #ffffff;
   color: #000000;
   font-size: 1rem;
-  min-height: 44px; /* Ensures mobile tap targets are friendly */
 }
-
 
 .input-row input:focus,
 .input-row select:focus {
