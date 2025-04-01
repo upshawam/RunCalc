@@ -35,7 +35,7 @@ body {
 
 /* Ensuring Equal Input Box Sizes */
 .input-group {
-  flex: 1; /* Makes all inputs the same width */
+  flex: 1;
 }
 
 .input-group input {
@@ -44,16 +44,23 @@ body {
   padding: 5px;
 }
 
-/* Fix Distance Field Font Size */
-#distance {
-  font-size: 1rem !important;
+/* Make Distance and Pick Event Align Like Hour, Min, Sec */
+.distance-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#distance, #event {
+  flex: 1;
+  font-size: 1rem;
+  padding: 5px;
 }
 
 /* Button Styling */
 button {
-  width: 80%; /* Reduced button width */
-  padding: 8px; /* Reduced padding */
-  font-size: 0.9rem; /* Smaller text */
+  padding: 8px;
+  font-size: 0.9rem;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -63,19 +70,22 @@ button {
 /* Calculate Buttons - Golden Yellow */
 #calculate, .calculate {
   background-color: #FFC107; /* Golden Yellow */
-  color: #121212;
+  color: black;
+  width: auto; /* Adjust to fit text */
+  padding: 8px 15px;
 }
 
 /* Clear Button - Red */
 #clear {
   background-color: #dc3545;
   color: white;
+  width: 100%;
 }
 
 /* Adjust Button Layout */
 .button-row {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Added spacing between buttons */
+  gap: 15px;
   margin-top: 10px;
 }
