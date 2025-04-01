@@ -73,22 +73,26 @@ button {
 button:not(.clear-btn) {
   background-color: #FFC107 !important; /* Golden Yellow */
   color: black !important;
+  display: block;
+  margin: 15px auto; /* Centers the button and adds spacing above */
 }
 
 /* Clear Button - Red */
 .clear-btn {
   background-color: #dc3545 !important; /* Red */
   color: white !important;
+  display: block;
+  margin: 15px auto; /* Centers the button below */
 }
 
 /* Button Container Layout */
 .button-container {
-  display: flex;
-  gap: 10px;
+  text-align: center;
+  padding-top: 10px; /* Adds a little space above buttons */
 }
 
-/* Separate Clear Button Below Calculate */
-.clear-btn {
-  margin-top: 10px; /* Extra spacing below calculate */
-  width: 100%;
+/* Place Clear Button Outside the Container */
+.clear-btn-container {
+  text-align: center;
+  margin-top: 15px; /* Extra spacing below Calculate Pace */
 }
