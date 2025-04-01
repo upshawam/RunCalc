@@ -44,15 +44,18 @@ h1, h2 {
 /* Input and Select Box Uniformity */
 .input-row input,
 .input-row select {
-  flex: 1 1 0;             /* All boxes share equal space */
-  padding: 12px;           /* Enhanced padding for touch targets */
+  flex: 1;
+  width: 100%; /* Ensures equal box sizes */
+  max-width: 120px; /* Sets an upper limit to avoid huge boxes */
+  padding: 12px;
   border: 1px solid #333;
   border-radius: 5px;
   background: #ffffff;
   color: #000000;
   font-size: 1rem;
-  min-height: 44px;        /* Recommended minimum for mobile tap areas */
+  min-height: 44px; /* Ensures mobile tap targets are friendly */
 }
+
 
 .input-row input:focus,
 .input-row select:focus {
