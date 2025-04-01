@@ -28,9 +28,16 @@ body {
 }
 
 /* Headings */
-h1, h2 {
+h1 {
+  text-align: center;
+  font-size: 1.5rem; /* Reduced font size for the top logo */
+  margin-bottom: 15px; /* Reduced spacing below */
+}
+
+h2 {
   text-align: center;
   color: #ffffff;
+  margin: 10px 0; /* Reduced spacing above/below each subheading */
 }
 
 /* Input Row Layout */
@@ -38,7 +45,7 @@ h1, h2 {
   display: flex;
   justify-content: center; /* Centers all input boxes */
   gap: 10px; /* Adds consistent spacing between inputs */
-  margin: 10px 0;
+  margin: 5px 0; /* Reduced spacing between rows */
 }
 
 /* Group Styling for Input + Label */
@@ -74,7 +81,12 @@ h1, h2 {
   margin-top: 4px; /* Adds space above the label */
 }
 
-/* Button Styling */
+/* Centered Button Container */
+.button-container {
+  text-align: center; /* Centers buttons */
+  margin-top: 10px; /* Adds slight spacing from inputs */
+}
+
 button {
   width: auto;
   padding: 10px 16px;
@@ -104,7 +116,7 @@ button:hover {
 
 /* Sections */
 .section {
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Reduced spacing between sections */
   padding: 8px 12px;
   border-bottom: 1px solid #333;
 }
