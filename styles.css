@@ -10,7 +10,7 @@ body {
   color: #f0f0f0;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,35 +26,59 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
+/* Section Divider */
+.section {
+  text-align: center;
+  border-bottom: 1px solid #444; /* Faint divider line */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* Remove bottom border for the last section */
+.section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
 /* Input Row - Centered & Proper Spacing */
 .input-row {
   display: flex;
-  justify-content: center; /* Centers boxes */
-  gap: 12px; /* Keeps spacing even */
-  margin: 5px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 3px; /* Reduced spacing between inputs */
+  margin: 6px 0;
 }
 
 /* Input Box Consistency */
 .input-group input,
 #distance,
 #eventSelect {
-  width: 80px; /* Uniform size */
+  width: 110px; /* Slightly reduced to fit better */
   font-size: 1rem;
   padding: 5px;
   text-align: center;
 }
 
+/* Adjust spacing around colons */
+.colon {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #f0f0f0;
+  margin: 0 0px; /* Less space around colons */
+}
+
 /* Button Styling */
 button {
   padding: 8px 15px;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Slightly larger for better readability */
   border: none;
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
   width: auto; /* Only as wide as text */
   display: block;
-  margin: 5px auto; /* Keeps buttons centered */
+  margin: 5px auto;
 }
 
 /* Calculate Buttons - Golden Yellow */
@@ -69,14 +93,36 @@ button:not(.clear-btn) {
   color: white !important;
 }
 
-/* Button Container - Small Gap Above Buttons */
+/* Button Container - Right Align Buttons */
 .button-container {
-  text-align: center;
-  padding-top: 5px; /* Tiny gap above buttons */
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px; /* Tiny gap above buttons */
+  width: 100%;
 }
 
 /* Clear Button - Below and Centered */
 .clear-btn-container {
   text-align: center;
-  margin-top: 12px; /* Subtle space below */
+  margin-top: 10px;
+}
+
+/* Centering labels and adjusting font size */
+.small-label {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .input-group input,
+  #distance,
+  #eventSelect {
+    width: 85px; /* Adjust width for smaller screens */
+    font-size: 0.9rem;
+  }
+
+  .button-container {
+    justify-content: center;
+  }
 }
