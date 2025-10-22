@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Running Calculator</title>
   <link rel="stylesheet" href="styles.css">
+
+  <!-- PWA additions -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2c3e50">
 </head>
 <body>
 
@@ -18,12 +23,12 @@
         <input id="hours" type="number" placeholder="hr" min="0">
         <label for="hours" class="small-label"></label>
       </div>
-      <span class="colon">:</span> <!-- Added colon -->
+      <span class="colon">:</span>
       <div class="input-group">
         <input id="minutes" type="number" placeholder="min" min="0" max="59">
         <label for="minutes" class="small-label"></label>
       </div>
-      <span class="colon">:</span> <!-- Added colon -->
+      <span class="colon">:</span>
       <div class="input-group">
         <input id="seconds" type="number" placeholder="sec" min="0" max="59">
         <label for="seconds" class="small-label"></label>
@@ -63,12 +68,12 @@
         <input id="paceHours" type="number" placeholder="hr" min="0">
         <label for="paceHours" class="small-label"></label>
       </div>
-      <span class="colon">:</span> <!-- Added colon -->
+      <span class="colon">:</span>
       <div class="input-group">
         <input id="paceMinutes" type="number" placeholder="min" min="0" max="59">
         <label for="paceMinutes" class="small-label"></label>
       </div>
-      <span class="colon">:</span> <!-- Added colon -->
+      <span class="colon">:</span>
       <div class="input-group">
         <input id="paceSeconds" type="number" placeholder="sec" min="0" max="59">
         <label for="paceSeconds" class="small-label"></label>
@@ -86,5 +91,14 @@
 </div>
 
 <script src="script.js"></script>
+
+<!-- Register service worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log("Service Worker registered:", reg.scope))
+      .catch(err => console.error("Service Worker registration failed:", err));
+  }
+</script>
 </body>
 </html>
