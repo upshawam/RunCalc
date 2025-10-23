@@ -17,11 +17,43 @@
 
   <!-- PWA additions -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#2c3e50">
+  <meta name="theme-color" content="#121212">
+
+  <style>
+    /* Splash overlay */
+    #splash {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #121212; /* match your app background */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease;
+    }
+    #splash img {
+      width: 120px;
+      height: 120px;
+    }
+    #splash.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+    /* Hide app until splash is done */
+    #app {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
+<!-- Splash screen -->
+<div id="splash">
+  <img src="icons/icon-192.png" alt="RunCalc logo">
+</div>
+
+<!-- Your app container -->
+<div id="app" class="container">
 
   <!-- Time Section -->
   <section class="section">
@@ -100,8 +132,23 @@
 
 <script src="script.js"></script>
 
-<!-- Register service worker -->
+<!-- Splash control -->
 <script>
+  window.addEventListener('load', () => {
+    const splash = document.getElementById('splash');
+    const app = document.getElementById('app');
+
+    // Delay to keep splash visible a bit longer
+    setTimeout(() => {
+      splash.classList.add('fade-out');
+      setTimeout(() => {
+        splash.style.display = 'none';
+        app.style.display = 'block';
+      }, 600); // matches CSS transition
+    }, 800); // splash duration in ms
+  });
+
+  // Register service worker
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js')
       .then(reg => console.log("Service Worker registered:", reg.scope))
