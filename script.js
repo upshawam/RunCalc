@@ -15,7 +15,6 @@ document.getElementById('eventSelect').addEventListener('change', () => {
 
 // Time Calculation
 function calculateTime() {
-  const paceHours = parseInt(document.getElementById('paceHours').value) || 0;
   const paceMinutes = parseInt(document.getElementById('paceMinutes').value) || 0;
   const paceSeconds = parseInt(document.getElementById('paceSeconds').value) || 0;
   const distance = parseFloat(document.getElementById('distance').value) || 0;
@@ -25,7 +24,12 @@ function calculateTime() {
     return;
   }
 
-  const totalPaceInSeconds = (paceHours * 3600) + (paceMinutes * 60) + paceSeconds;
+  const totalPaceInSeconds = (paceMinutes * 60) + paceSeconds;
+  if (totalPaceInSeconds === 0) {
+    alert("Please enter a valid pace.");
+    return;
+  }
+
   const totalTimeInSeconds = totalPaceInSeconds * distance;
 
   const hours = Math.floor(totalTimeInSeconds / 3600);
@@ -43,12 +47,11 @@ function calculateDistance() {
   const hours = parseInt(document.getElementById('hours').value) || 0;
   const minutes = parseInt(document.getElementById('minutes').value) || 0;
   const seconds = parseInt(document.getElementById('seconds').value) || 0;
-  const paceHours = parseInt(document.getElementById('paceHours').value) || 0;
   const paceMinutes = parseInt(document.getElementById('paceMinutes').value) || 0;
   const paceSeconds = parseInt(document.getElementById('paceSeconds').value) || 0;
 
   const totalTimeInSeconds = (hours * 3600) + (minutes * 60) + seconds;
-  const totalPaceInSeconds = (paceHours * 3600) + (paceMinutes * 60) + paceSeconds;
+  const totalPaceInSeconds = (paceMinutes * 60) + paceSeconds;
 
   if (totalPaceInSeconds === 0) {
     alert("Please enter a valid pace.");
@@ -61,7 +64,7 @@ function calculateDistance() {
   document.getElementById('distance').value = distance.toFixed(2);
 }
 
-// **Fixed Pace Calculation**
+// Pace Calculation (no pace hours input anymore)
 function calculatePace() {
   const hours = parseInt(document.getElementById('hours').value) || 0;
   const minutes = parseInt(document.getElementById('minutes').value) || 0;
@@ -79,14 +82,23 @@ function calculatePace() {
   // Calculate pace in seconds per mile
   const paceInSeconds = totalTimeInSeconds / distance;
 
-  const paceHours = Math.floor(paceInSeconds / 3600);
-  const paceMinutes = Math.floor((paceInSeconds % 3600) / 60);
+  // Since we removed the pace hours input, convert the pace to minutes and seconds.
+  // This will allow paceMinutes to be >= 60 if the calculated pace is very slow.
+  const paceTotalMinutes = Math.floor(paceInSeconds / 60);
   const paceSeconds = Math.floor(paceInSeconds % 60);
 
   // Display result back in the pace input fields
-  document.getElementById('paceHours').value = paceHours;
-  document.getElementById('paceMinutes').value = paceMinutes;
+  document.getElementById('paceMinutes').value = paceTotalMinutes;
   document.getElementById('paceSeconds').value = paceSeconds;
+
+  // Informative message if pace exceeds an hour per mile (very slow/unusual)
+  const paceHours = Math.floor(paceInSeconds / 3600);
+  const paceResultElem = document.getElementById('paceResult');
+  if (paceHours >= 1) {
+    paceResultElem.textContent = `Note: calculated pace is ${paceHours}h ${paceTotalMinutes % 60}m ${paceSeconds}s per mile. Minutes field shows total minutes (${paceTotalMinutes}m).`;
+  } else {
+    paceResultElem.textContent = '';
+  }
 }
 
 // Clear All Function
@@ -97,4 +109,12 @@ function clearAll() {
 
   const eventSelect = document.getElementById('eventSelect');
   eventSelect.selectedIndex = 0;   // Reset dropdown to "Pick Event"
+
+  // Clear any result text
+  const paceResultElem = document.getElementById('paceResult');
+  if (paceResultElem) paceResultElem.textContent = '';
+  const timeResultElem = document.getElementById('timeResult');
+  if (timeResultElem) timeResultElem.textContent = '';
+  const distanceResultElem = document.getElementById('distanceResult');
+  if (distanceResultElem) distanceResultElem.textContent = '';
 }
