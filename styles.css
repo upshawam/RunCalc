@@ -37,13 +37,14 @@ body {
 
 .section-header h3 {
   margin: 0;
+  padding-left: 10px;
 }
 
 .unit-radio-group {
   position: absolute;
   right: 0;
   display: flex;
-  gap: 15px;
+  gap: 10px; /* Reduce spacing between radio buttons */
 }
 
 .radio-label {
@@ -64,6 +65,22 @@ body {
 
 .radio-label span {
   user-select: none;
+  text-transform: lowercase; /* Use lowercase text */
+}
+
+/* Center Distance header and position toggle to the right */
+.section-header {
+  justify-content: center;
+  position: relative;
+}
+
+.section-header h3 {
+  margin: 0 auto; /* Center the header */
+}
+
+.unit-toggle {
+  position: absolute;
+  right: 10px; /* Bring closer to the header */
 }
 
 /* Section Divider */
@@ -143,14 +160,122 @@ button:not(.clear-btn) {
 
 /* Clear Button - Below and Centered */
 .clear-btn-container {
-  text-align: center;
-  margin-top: 10px;
+  text-align: right;
+  margin-top: 20px; /* Increase spacing */
+  position: relative;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 0;
+  bottom: -10px; /* Slightly lower */
 }
 
 /* Centering labels and adjusting font size */
 .small-label {
   font-weight: normal;
   font-size: 12px;
+}
+
+/* Larger toggle switch for mi/km */
+.unit-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.toggle-label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Smaller toggle switch for mi/km */
+.slider {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.toggle-text {
+  font-size: 0.9rem;
+  text-transform: lowercase;
+  margin-left: 5px; /* Reduce spacing */
+}
+
+/* Adjust Distance header to avoid overlap */
+.section-header {
+  justify-content: center;
+  position: relative;
+}
+
+.section-header h3 {
+  margin-right: 80px; /* Adjust to center header */
+}
+
+/* Revert header alignment */
+.section-header,
+.section > h3 {
+  text-align: center;
+  position: relative;
+}
+
+.section-header h3,
+.section > h3 {
+  margin: 0 auto;
+}
+
+/* Center Distance header over Calculate Distance button */
+#distanceHeader {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Align Distance header above Calculate Distance button */
+#distanceHeader {
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.unit-toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px; /* Ensure toggle doesn't interfere */
 }
 
 /* Responsive adjustments */
@@ -165,4 +290,20 @@ button:not(.clear-btn) {
   .button-container {
     justify-content: center;
   }
+}
+
+/* Left-align all section headers */
+.section-header {
+  justify-content: flex-start;
+}
+
+/* Revert Clear All button to original position */
+.clear-btn-container {
+  text-align: center;
+  margin-top: 10px;
+  position: static;
+}
+
+.clear-btn {
+  position: static;
 }

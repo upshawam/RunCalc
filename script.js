@@ -22,30 +22,27 @@ const eventDistancesMiles = {
 // Unit radio button functionality
 document.addEventListener('DOMContentLoaded', () => {
   const unitRadios = document.querySelectorAll('input[name="unit"]');
-  const paceHeader = document.getElementById('paceHeader');
+  const labels = document.querySelectorAll('.radio-label span');
+
+  labels.forEach((label, index) => {
+    label.textContent = index === 0 ? 'mi' : 'km';
+  });
 
   unitRadios.forEach(radio => {
     radio.addEventListener('change', () => {
       isKilometers = radio.value === 'km';
       
       // Update pace header
-      if (isKilometers) {
-        paceHeader.textContent = 'Pace (min/km)';
-      } else {
-        paceHeader.textContent = 'Pace (min/mile)';
-      }
+      const paceHeader = document.getElementById('paceHeader');
+      paceHeader.textContent = isKilometers ? 'Pace (min/km)' : 'Pace (min/mi)';
 
       // Convert existing distance value if present
       const distanceInput = document.getElementById('distance');
       if (distanceInput.value) {
         const currentValue = parseFloat(distanceInput.value);
-        if (isKilometers) {
-          // Convert miles to km
-          distanceInput.value = (currentValue * 1.60934).toFixed(2);
-        } else {
-          // Convert km to miles
-          distanceInput.value = (currentValue / 1.60934).toFixed(2);
-        }
+        distanceInput.value = isKilometers
+          ? (currentValue * 1.60934).toFixed(2) // Convert miles to km
+          : (currentValue / 1.60934).toFixed(2); // Convert km to miles
       }
 
       // Update event select if a preset is chosen
@@ -54,6 +51,55 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDistanceFromEvent();
       }
     });
+  });
+});
+
+// Unit toggle functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const unitToggle = document.getElementById('unitToggle');
+  const unitLabel = document.getElementById('unitLabel');
+  const paceHeader = document.getElementById('paceHeader');
+
+  unitToggle.addEventListener('change', () => {
+    isKilometers = unitToggle.checked;
+    unitLabel.textContent = isKilometers ? 'km' : 'mi';
+
+    // Update pace header
+    paceHeader.textContent = isKilometers ? 'Pace (min/km)' : 'Pace (min/mi)';
+
+    // Convert existing distance value if present
+    const distanceInput = document.getElementById('distance');
+    if (distanceInput.value) {
+      const currentValue = parseFloat(distanceInput.value);
+      distanceInput.value = isKilometers
+        ? (currentValue * 1.60934).toFixed(2) // Convert miles to km
+        : (currentValue / 1.60934).toFixed(2); // Convert km to miles
+    }
+
+    // Convert existing pace value if present
+    const paceMinutesInput = document.getElementById('paceMinutes');
+    const paceSecondsInput = document.getElementById('paceSeconds');
+    if (paceMinutesInput.value || paceSecondsInput.value) {
+      const paceMinutes = parseFloat(paceMinutesInput.value) || 0;
+      const paceSeconds = parseFloat(paceSecondsInput.value) || 0;
+      const totalPaceInSeconds = (paceMinutes * 60) + paceSeconds;
+
+      const convertedPaceInSeconds = isKilometers
+        ? totalPaceInSeconds / 1.60934 // Convert pace to km
+        : totalPaceInSeconds * 1.60934; // Convert pace to miles
+
+      const newPaceMinutes = Math.floor(convertedPaceInSeconds / 60);
+      const newPaceSeconds = Math.round(convertedPaceInSeconds % 60);
+
+      paceMinutesInput.value = newPaceMinutes;
+      paceSecondsInput.value = newPaceSeconds;
+    }
+
+    // Update event select if a preset is chosen
+    const eventSelect = document.getElementById('eventSelect');
+    if (eventSelect.value) {
+      updateDistanceFromEvent();
+    }
   });
 });
 
