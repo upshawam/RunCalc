@@ -51,7 +51,19 @@
 
   <!-- Distance Section -->
   <section class="section">
-    <h3>Distance (Miles)</h3>
+    <div class="section-header">
+      <h3>Distance</h3>
+      <div class="unit-radio-group">
+        <label class="radio-label">
+          <input type="radio" name="unit" value="miles" checked>
+          <span>Miles</span>
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="unit" value="km">
+          <span>Km</span>
+        </label>
+      </div>
+    </div>
     <div class="input-row">
       <input id="distance" class="num-input" type="number" placeholder="Distance" min="0" step="0.01">
       <select id="eventSelect">
@@ -71,7 +83,7 @@
 
   <!-- Pace Section -->
   <section class="section">
-    <h3>Pace (Min/Mile)</h3>
+    <h3 id="paceHeader">Pace (min/mile)</h3>
     <div class="input-row">
       <!-- paceHours removed on purpose to avoid user error -->
       <div class="input-group">

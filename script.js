@@ -1,17 +1,77 @@
-// Automatically update the distance field when selecting a race event
-document.getElementById('eventSelect').addEventListener('change', () => {
+// Unit state (true = km, false = miles)
+let isKilometers = false;
+
+// Event distances in kilometers
+const eventDistancesKm = {
+  '5k': 5,
+  '10k': 10,
+  'half_marathon': 21.0975,
+  'full_marathon': 42.195,
+  '50k': 50
+};
+
+// Event distances in miles
+const eventDistancesMiles = {
+  '5k': 3.1,
+  '10k': 6.2,
+  'half_marathon': 13.1,
+  'full_marathon': 26.2,
+  '50k': 31.1
+};
+
+// Unit radio button functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const unitRadios = document.querySelectorAll('input[name="unit"]');
+  const paceHeader = document.getElementById('paceHeader');
+
+  unitRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      isKilometers = radio.value === 'km';
+      
+      // Update pace header
+      if (isKilometers) {
+        paceHeader.textContent = 'Pace (min/km)';
+      } else {
+        paceHeader.textContent = 'Pace (min/mile)';
+      }
+
+      // Convert existing distance value if present
+      const distanceInput = document.getElementById('distance');
+      if (distanceInput.value) {
+        const currentValue = parseFloat(distanceInput.value);
+        if (isKilometers) {
+          // Convert miles to km
+          distanceInput.value = (currentValue * 1.60934).toFixed(2);
+        } else {
+          // Convert km to miles
+          distanceInput.value = (currentValue / 1.60934).toFixed(2);
+        }
+      }
+
+      // Update event select if a preset is chosen
+      const eventSelect = document.getElementById('eventSelect');
+      if (eventSelect.value) {
+        updateDistanceFromEvent();
+      }
+    });
+  });
+});
+
+// Update distance field when selecting a race event
+function updateDistanceFromEvent() {
   const event = document.getElementById('eventSelect').value;
   const distanceInput = document.getElementById('distance');
 
-  switch (event) {
-    case '5k': distanceInput.value = 3.1; break;
-    case '10k': distanceInput.value = 6.2; break;
-    case 'half_marathon': distanceInput.value = 13.1; break;
-    case 'full_marathon': distanceInput.value = 26.2; break;
-    case '50k': distanceInput.value = 31.1; break;
-    default: distanceInput.value = '';
+  if (!event) {
+    distanceInput.value = '';
+    return;
   }
-});
+
+  const distances = isKilometers ? eventDistancesKm : eventDistancesMiles;
+  distanceInput.value = distances[event] || '';
+}
+
+document.getElementById('eventSelect').addEventListener('change', updateDistanceFromEvent);
 
 /**
  * Input sanitization helpers to prevent 'e' (and 'E') being used in number inputs.

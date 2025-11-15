@@ -26,6 +26,46 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
+/* Section Header with Radio Buttons */
+.section-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.section-header h3 {
+  margin: 0;
+}
+
+.unit-radio-group {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #f0f0f0;
+}
+
+.radio-label input[type="radio"] {
+  cursor: pointer;
+  accent-color: #FFC107;
+  width: 16px;
+  height: 16px;
+}
+
+.radio-label span {
+  user-select: none;
+}
+
 /* Section Divider */
 .section {
   text-align: center;
