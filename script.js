@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (distanceInput.value) {
       const currentValue = parseFloat(distanceInput.value);
       distanceInput.value = isKilometers
-        ? (currentValue * 1.60934).toFixed(2) // Convert miles to km
-        : (currentValue / 1.60934).toFixed(2); // Convert km to miles
+        ? (Math.round(currentValue * 1.60934 * 100) / 100).toFixed(2) // Convert miles to km
+        : (Math.round(currentValue / 1.60934 * 100) / 100).toFixed(2); // Convert km to miles
     }
 
     // Convert existing pace value if present
@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const totalPaceInSeconds = (paceMinutes * 60) + paceSeconds;
 
       const convertedPaceInSeconds = isKilometers
-        ? totalPaceInSeconds / 1.60934 // Convert pace to km
-        : totalPaceInSeconds * 1.60934; // Convert pace to miles
+        ? Math.round(totalPaceInSeconds / 1.60934) // Convert pace to km
+        : Math.round(totalPaceInSeconds * 1.60934); // Convert pace to miles
 
       const newPaceMinutes = Math.floor(convertedPaceInSeconds / 60);
       const newPaceSeconds = Math.round(convertedPaceInSeconds % 60);
