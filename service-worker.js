@@ -1,12 +1,12 @@
-const CACHE_NAME = "runcalc-cache-v2"; // bump version when you update
+const CACHE_NAME = "runcalc-cache-v3"; // bump version when you update
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/styles.css",
-  "/script.js",
-  "/manifest.json",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png"
+  "/RunCalc/",
+  "/RunCalc/index.html",
+  "/RunCalc/styles.css",
+  "/RunCalc/script.js",
+  "/RunCalc/manifest.json",
+  "/RunCalc/icons/icon-192.png",
+  "/RunCalc/icons/icon-512.png"
 ];
 
 // Install and cache files

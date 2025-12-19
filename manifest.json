@@ -1,7 +1,8 @@
 {
   "name": "Running Calculator",
   "short_name": "RunCalc",
-  "start_url": ".",
+  "start_url": "/RunCalc/",
+  "scope": "/RunCalc/",
   "display": "standalone",
   "background_color": "#121212",
   "theme_color": "#121212",
